@@ -42,7 +42,7 @@ double integrate_3d(Polynomial myfunc, double xstart, double xend, int xnum_poin
             {
                 //array to store all the points that we need to average
                 //we are averaging over the 8 vertices of this (dx,dy,dz) cube
-                double *list_of_points = new double[8];
+                double *list_of_points = new double[8];//wrong here
                 
                 //compute the function points that require averaging
                 list_of_points[0] = myfunc.value(xcurr,ycurr,zcurr);
@@ -62,6 +62,9 @@ double integrate_3d(Polynomial myfunc, double xstart, double xend, int xnum_poin
                 
                 //increment z coordinate
                 zcurr += dz;
+
+                //free
+                delete []list_of_points;
             }
             
             //increment y coordinate
@@ -80,7 +83,8 @@ double integrate_3d(Polynomial myfunc, double xstart, double xend, int xnum_poin
         // and the average function value in that space
         result += (average_function_value[i] * dx * dy * dz);
     }
-    
+
+
     return result;
 }
 
