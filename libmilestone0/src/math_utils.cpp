@@ -64,7 +64,7 @@ double integrate_3d(Polynomial myfunc, double xstart, double xend, int xnum_poin
                 zcurr += dz;
 
                 //free
-                delete []list_of_points;
+                delete [] list_of_points;
             }
             
             //increment y coordinate
@@ -95,7 +95,7 @@ double average(double *my_list_to_average, int num_elements)
     double total = 0;
     
     //loop over vector
-    for(int i = 0; i <= num_elements; i++)
+    for(int i = 0; i < num_elements; i++)
     {
         //increment total with current element
         total += my_list_to_average[i];
