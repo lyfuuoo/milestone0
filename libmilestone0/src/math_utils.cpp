@@ -56,21 +56,23 @@ double integrate_3d(Polynomial myfunc, double xstart, double xend, int xnum_poin
 
                 //compute the average of the function in our current delta-volume
                 double favg = average(list_of_points,8);
-                
+                delete [] list_of_points;
                 //push that average into a vector to be summed up later
                 average_function_value.push_back(favg);
                 
                 //increment z coordinate
                 zcurr += dz;
 
-                //free
-                delete [] list_of_points;
+
+
+
             }
             
             //increment y coordinate
             ycurr += dy;
+
         }
-        
+
         //increment x coordinate
         xcurr += dx;
     }
@@ -99,8 +101,9 @@ double average(double *my_list_to_average, int num_elements)
     {
         //increment total with current element
         total += my_list_to_average[i];
+
     }
-    
     //average is the quotient of total and number of elements
+
     return total/(double)num_elements;
 }

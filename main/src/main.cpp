@@ -27,6 +27,8 @@ int main() {
     //print out center of mass
     cout << setprecision(4) << "center of mass (x,y,z) = " << center_of_mass << endl;
     cout << setprecision(4) << "center (x,y,z) = " << center << endl;
+    delete my_density_function;
+    delete function;
 
 
     
